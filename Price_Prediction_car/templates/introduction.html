@@ -26,16 +26,41 @@
         li a:hover {
           background-color: #111;
         }
+        .card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin: auto;
+  width: 20%;
+}
+
+.card:hover {
+  
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
         </style>
         </head>
         <body>
         
         <ul>
-          <li><a class="active" href="{{url_for(predict)}}">Home</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a class="active" href="{{url_for('Home')}}">Home</a></li>
+          <li><a href="{{url_for('stored_data')}}">Stored Data</a></li>
+          <li><a href="{{url_for('introduction')}}">About</a></li>
         </ul>
+
+        <center><h2>My Introduction</h2></center>
+        <div class="card">
+            <img src="/templates/lol.jpeg" alt="Avatar" style="width:100%">
+            <div class="container">
+              <h4><b>Nisarg Bhatt</b></h4> 
+              <h4><b>Student Of Computer Science</b></h4>
+              <h4>-----------------------------------------------------------------</h4> 
+              <p>I am 3rd year student of computer Science and this the my intoduction page for the project of <b>COMP-4312 Cloud Computing</b>. I have made this project mostly on my own with little help from my very best friend INTERNET. I tried making a prediction model for guessing the current selling price of the car based on the dataset from cardekho website, which is very popular car selling website in India. as we had some communicatin gap between my team members i decided to work on my own which can be the reason my project was little bit behind the schedule and couldnt make it work as nice as i would wanted to. if you are still reading THANKS FOR READING :)</p>
+             </div>
+          </div>
     
     </body>
 </html>

@@ -78,5 +78,13 @@ def predict():
     else:
         return render_template('index.html')
 
+
+@app.route("/stored_data", methods=['GET'])
+def stored_data():
+    return None
+
+@app.route("/introduction")
+def introduction():
+    return render_template('introduction.html')
 if __name__=="__main__":
     app.run(host='0.0.0.0')
