@@ -1,0 +1,20 @@
+ apiVersion: apps/v1
+ kind: Deployment
+ metadata:
+   name: finalproject
+ spec:
+   replicas: 1
+   selector:
+     matchLabels:
+       app: finalproject
+   template:
+     metadata:
+       labels:
+         app: finalproject
+     spec:
+       containers:
+       - name: finalproject
+         image: nisargbhatt/final_project:1.0
+         imagePullPolicy: Always
+         ports:
+         - containerPort: 5000
