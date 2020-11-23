@@ -29,11 +29,11 @@ with app.app_context():
 
 @app.route('/',methods=['GET'])
 def Home():
-    return render_template('index.html')
+    return render_template('main_page.html')
 
 
 standard_to = StandardScaler()
-@app.route("/predict", methods=['POST'])
+@app.route("/predict", methods=['GET','POST'])
 def predict():
     Fuel_Type_Diesel=0
     if request.method == 'POST':
@@ -81,10 +81,13 @@ def predict():
 
 @app.route("/stored_data", methods=['GET'])
 def stored_data():
-    return None
+    results_obj = Result.query.all()
+    results_list = [i.as_dict() for i in results_obj]
+    return render_template('results.html', data=results_list)
 
 @app.route("/introduction")
 def introduction():
     return render_template('introduction.html')
+
 if __name__=="__main__":
     app.run(host='0.0.0.0')

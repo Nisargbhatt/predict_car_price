@@ -13,4 +13,5 @@ class Result(db.Model):
     TransmissionType = db.Column(db.String(100))
     PredictedPrice = db.Column(db.String(100))
 
-
+    def as_dict(self):
+        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
