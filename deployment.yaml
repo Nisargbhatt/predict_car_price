@@ -1,4 +1,4 @@
- apiVersion: apps/v1
+apiVersion: apps/v1
  kind: Deployment
  metadata:
    name: finalproject
@@ -14,7 +14,13 @@
      spec:
        containers:
        - name: finalproject
-         image: nisargbhatt/final_project:1.0
+         image: nisargbhatt/final_img_env:1.2
          imagePullPolicy: Always
          ports:
          - containerPort: 5000
+         env:
+         - name: DB_HOST
+           valueFrom:
+            secretKeyRef:
+              name: my-secret1
+              key: db_host
