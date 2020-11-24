@@ -10,4 +10,5 @@ RUN pip install -r requirements.txt
 # i get ip address of the docker's localhost by "docker exec -it 106c380dff2f ip addr"
 #and run it by combining with the port and ip with your browser.
 CMD [ "python","./app.py"]
+# RUN python ./app.py
 # CMD ["flask", "run", "--host", "0.0.0.0", "-p", "5000"] 
